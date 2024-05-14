@@ -1,0 +1,52 @@
+[
+    {
+        "name_uz": "Avstraliya",
+        "name_en": "Australia",
+        "code": "AU"
+    },
+    {
+        "name_uz": "Braziliya",
+        "name_en": "Brazil",
+        "code": "BR"
+    },
+    {
+        "name_uz": "Ozbekiston",
+        "name_en": "Uzbekistan",
+        "code": "UZ"
+    },
+    {
+        "name_uz": "Misir",
+        "name_en": "Egypt",
+        "code": "EG"
+    },
+    {
+        "name_uz": "Germaniya",
+        "name_en": "German",
+        "code": "GR"
+    },
+    {
+        "name_uz": "Turkmaniston",
+        "name_en": "Turkmanistan",
+        "code": "TK"
+    },
+    {
+        "name_uz": "Turkiya",
+        "name_en": "Turkey",
+        "code": "TR"
+    },
+    {
+        "name_uz": "Malasiya",
+        "name_en": "Malasia",
+        "code": "MA"
+    },
+    {
+        "name_uz": "Xitoy",
+        "name_en": "China",
+        "code": "CH"
+    },
+    {
+        "name_uz": "Yaponiya",
+        "name_en": "Japan",
+        "code": "JP"
+    }
+]
