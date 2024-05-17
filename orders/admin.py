@@ -1,3 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
+from orders.models import *
+
+
+admin.site.register(CartItem)
+admin.site.register(Card)
+admin.site.register(Discount)
+admin.site.register(Branch)
+admin.site.register(DeliveryTariff)
+admin.site.register(Order)
+
