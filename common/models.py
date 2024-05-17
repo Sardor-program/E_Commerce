@@ -99,7 +99,7 @@ class CustomerFeedback(models.Model):
 
     class Meta:
         verbose_name = _("Customer feedback")
-        verbose_name_plural = _("Customer feesbacks")
+        verbose_name_plural = _("Customer feedbacks")
 
 
 

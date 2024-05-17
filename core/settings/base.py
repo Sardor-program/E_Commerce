@@ -39,7 +39,10 @@ LOCAL_APPS = [
      
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    'ckeditor',
+    'mptt',
+]
 
 INSTALLED_APPS = LOCAL_APPS + THIRD_PARTY_APPS
 
