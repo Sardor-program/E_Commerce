@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.core.validators import FileExtensionValidator, URLValidator, RegexValidator
+from django.core.exceptions import ValidationError
 
 
 class Media(models.Model):
@@ -10,11 +12,29 @@ class Media(models.Model):
         MUSIC = "music", _("Music")
         VIDEO = "video", _("Video")
 
-    file = models.FileField(_("File"), upload_to="files/")
+    file = models.FileField(_("File"), upload_to="files/", validators=[
+        FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'gif', 'mp4', 'mp3', 'flac', 'doc', 'pdf'])
+    ])
     type = models.CharField(_("Type"), max_length=60, choices=MediaType.choices)
 
     def __str__(self):
-        return self.id
+        return str(self.id) + " " + str(self.file.name.split("/")[-1])
+
+    def clean(self):
+        if self.type == self.MediaType.IMAGE:
+            if not self.file.name.endswith(('.jpg', '.jpeg', '.png')):
+                raise ValidationError("File type is not image")
+        elif self.type == self.MediaType.FILE:
+            if not self.file.name.endswith(('.doc', '.pdf')):
+                raise ValidationError("File type is not document")
+        elif self.type == self.MediaType.MUSIC:
+            if not self.file.name.endswith(('.mp3', '.flac')):
+                raise ValidationError("File type is not music")
+        elif self.type == self.MediaType.VIDEO:
+            if not self.file.name.endswith('.mp4'):
+                raise ValidationError("File type is not video")
+        else:
+            raise ValidationError("File type is not valid")                                 
 
 
 class Settings(models.Model):

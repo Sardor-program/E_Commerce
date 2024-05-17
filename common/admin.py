@@ -11,14 +11,14 @@ admin.site.register(OurInstagramStory)
 class CustomerFeedbackAdmin(admin.ModelAdmin):
     list_display = ('id', 'customer_name', 'customer_position', 'rank')
     search_fields = ('customer_name', 'customer_position')
-    list_filter = ('rank')
+    list_filter = ['rank', ]
 
     def has_add_permission(self, request):
         return False
 
 
-admin.sitel.register(CustomerFeedback, CustomerFeedbackAdmin)
-        
+admin.site.register(CustomerFeedback, CustomerFeedbackAdmin)
+
 
 
 
